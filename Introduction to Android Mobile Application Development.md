@@ -26,3 +26,30 @@
   + Linux Kernel
 - These are seperated into 4 layers:
   <img src='https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/qHi-z6qtQ3y4vs-qrQN8xQ_a0afdd3e0c364406851e2fefe72ce3e1_Picture-1.png?expiry=1668556800000&hmac=EMLEPO-Cgql1OfnBcfS_pMOzKinYl1sFaAsXHv1nu1Q' />
+
+### Mobile CPU Architecture:
+
+As of now, there are three main CPU architectures used in most smartphones - ARM, ARM64 and x86.
+CPU types include:
+- ARM: ARMv7 and armeabi
+- ARM64: AArch64 and arm64
+- x86: x86 and x86abi
+
+Of these three, ARM is the most common as it is properly optimized for battery use.
+
+ARM64 is an evolution of the original ARM architecture that supports 64-bit processing for more powerful computing and it's quickly becoming the standard in newer devices.
+
+Then there's x86, which is a bit more powerful than the ARM CPUs, but not quite as battery-friendly, so it's the least commonly used for the three.
+
+### Common libraries and packages:
+
+- Image loading - Fresco
+- Videos - ExoPlayer
+- Networking - Retrofit
+
+#### Quiz notes:
+
+- **Quick boot** will remember the last state of your device so that when you run the Android emulator the next time it will show you the same screen.
+
+- **Cold boot** will start your device as if you’re turning it on for the first time. 
+
