@@ -53,3 +53,29 @@ Then there's x86, which is a bit more powerful than the ARM CPUs, but not quite 
 
 - **Cold boot** will start your device as if you’re turning it on for the first time. 
 
+### Project structure:
+
+``.gradle``: configurations and files used for project building, they are automatically generated each time you try to compile a project.
+
+``.idea``: used by Android Studio to store specific project metadata.
+
+``gradle``: refers to Android's build system, which is a set of tools made available to developers to build, test, and run their applications; whenever you build or compile a project, build-related data is generated and held in this gradle or build folder.
+
+``build.gradle``: specify and manage configuration options.
+
+``gradlew``: file that is used by Gradle Android Studios build system; it is only created once and is updated whenever a new feature or plugin is required to build a project.
+
+``local.properties``: this file contains information specific to your local configuration.
+
+``settings.gradle``: this file handles the various settings for projects and modules
+
+### Gradle:
+
+<img src="/images/gradle.jpg" />
+
+### Android manifest:
+
+When you create a project:
+- Android Studio generates a manifest (.xml)
+- The manifest contains info about your app.
+- This info helps you define permissions.
