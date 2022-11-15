@@ -1,6 +1,9 @@
 package com.example.sample_app
 
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,6 +12,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.MediaController
+import android.widget.VideoView
 import com.example.sample_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,13 +21,44 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    lateinit var videoView: VideoView
+    private val videoUrl = "android.resource://com.example.sample_app/raw/test"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+        Log.d("TAG", videoUrl);
+        // on below line we are initializing our variables.
+        videoView = findViewById(R.id.videoView)
+
+        // Uri object to refer the
+        // resource from the videoUrl
+        val uri = Uri.parse(videoUrl)
+
+        // sets the resource from the
+        // videoUrl to the videoView
+        videoView.setVideoURI(uri)
+
+        // creating object of
+        // media controller class
+        val mediaController = MediaController(this)
+
+        // sets the anchor view
+        // anchor view for the videoView
+        mediaController.setAnchorView(videoView)
+
+        // sets the media player to the videoView
+        mediaController.setMediaPlayer(videoView)
+
+        // sets the media controller to the videoView
+        videoView.setMediaController(mediaController);
+
+        // starts the video
+        videoView.start();
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)

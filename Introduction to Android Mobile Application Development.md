@@ -79,3 +79,8 @@ When you create a project:
 - Android Studio generates a manifest (.xml)
 - The manifest contains info about your app.
 - This info helps you define permissions.
+
+### Android Resource Directory vs. Directory:
+
+- When we use Android Resource Directory, Android recognizes all files saved there as resources and assigns unique IDs to each item. These IDs help Android identify a resource whenever a developer needs to reference it.
+- On the other hand, a Directory folder is just a regular folder and Android will not assign IDs to the files saved in it.
